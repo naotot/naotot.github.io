@@ -2,7 +2,7 @@ $(document).ready(function(){
 	var dataURL = 'https//api.instagram.com/v1/users/self/media/recent';
 	var phtoData;
 
-	var get Data = function(url) {
+	var getData = function(url) {
 		$.ajax({
 			url: url,
 			dataType: 'jsonp',
