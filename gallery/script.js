@@ -34,11 +34,24 @@ $(document).ready(function(){
           $('<p class="caption"></p>').text(caption + '♡' +this.likes.count)
           )
         );
-
       });
 
-    })
-    
+      if($('#pagination').children().length === 0) {
+        $('#pagination').append (
+          $('<a class="next"></a>').attr('href', '#').text('もっと見る').on('click', function(e){
+            e.preventDefault();
+            if(photoData.pagination.next_url) {
+              getData(photoData.pagination.next_url);            }
+          }
+      })
+  );
+    }
+
+    if(!photoData.pagination.next_url) {
+      $('.next').remove();
+    }
+
+})
     .fail(function() {
       $('#gallery').text('データの読み込みに失敗しました。');
     })
