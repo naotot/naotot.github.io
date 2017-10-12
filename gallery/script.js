@@ -8,14 +8,15 @@ $(document).ready(function(){
       dataType: 'jsonp',
       data: {
         access_token: '317491.7045744.c4678de2895742458d97cef18f8c2105',
-        count: 12
+        count: 6
       }
     })
     .done(function(data) {
       photoData = data;
-      // console.dir(photoData);
 
       $(photoData.data).each(function(){
+
+        var caption = '';
         if(this.caption) {
           caption = this.caption.text;
         }
