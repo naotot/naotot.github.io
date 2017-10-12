@@ -13,8 +13,32 @@ $(document).ready(function(){
     })
     .done(function(data) {
       photoData = data;
-      console.dir(photoData);
+      // console.dir(photoData);
+
+      $(photoData.data).each(function(){
+        if(this.caption) {
+          caption = this.caption.text;
+        }
+
+      $('#gallery').append(
+        $('<div class="img_block"></div>')
+        .append(
+          $('<a></a>')
+          .attr('href', this.link)
+          .attr('target', '_blank')
+          .append(
+            $('<img>').attr('src', this.images.low_resolution.url)
+            )
+          )
+        .append(
+          $('<p class="caption"></p>').text(caption + '♡' +this.likes.count)
+          )
+        );
+
+      });
+
     })
+    
     .fail(function() {
       $('#gallery').text('データの読み込みに失敗しました。');
     })
