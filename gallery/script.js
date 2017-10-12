@@ -28,7 +28,7 @@ $(document).ready(function(){
           .attr('href', this.link)
           .attr('target', '_blank')
           .append(
-            $('<img>').attr('src', this.images.low_resolution.url).attr('width', '100')
+            $('<img>').attr('src', this.images.low_resolution.url)
             )
           )
         .append(
