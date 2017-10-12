@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var dataURL = 'https//api.instagram.com/v1/users/self/media/recent';
-	var phtoData;
+	var photoData;
 
 	var getData = function(url) {
 		$.ajax({
