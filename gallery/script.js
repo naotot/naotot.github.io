@@ -13,6 +13,7 @@ $(document).ready(function(){
     })
     .done(function(data) {
       photoData = data;
+      console.dir(photoData);
 
       //check data
       $(photoData.data).each(function(){
