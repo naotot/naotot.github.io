@@ -27,7 +27,9 @@ $(document).ready(function(){
           .attr('href', this.link)
           .attr('target', '_blank')
           .append(
-            $('<img>').attr('src', this.images.low_resolution.url)
+            $('<img>')
+            .attr('src', this.images.low_resolution.url)
+            .attr('width', '100')
             )
           )
         .append(
@@ -38,7 +40,7 @@ $(document).ready(function(){
       });
 
     })
-    
+
     .fail(function() {
       $('#gallery').text('データの読み込みに失敗しました。');
     })
